@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجمعية الفلسطينية عون | Awn Palestinian Association</title>
+    
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        awn: {
+                            dark: '#a81c24',     /* Dark burgundy red */
+                            primary: '#d9252e',  /* Primary vibrant red */
+                            light: '#fdf2f2',    /* Warm red tint */
+                            accent: '#f59e0b',   /* Warm gold accent */
+                        },
+                        neutralDark: '#1f2937',  /* Slate grey / dark charcoal */
+                        neutralGray: '#f3f4f6',  /* Clean gray background */
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'Tajawal', 'sans-serif'],
+                        heading: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles & Animations -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fafafa;
+            color: #1f2937;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .bg-hero-pattern {
+            background: linear-gradient(135deg, rgba(168, 28, 36, 0.94) 0%, rgba(31, 41, 55, 0.92) 100%), 
+                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(217, 37, 46, 0.4);
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a81c24;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d9252e;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-awn-primary selection:text-white">
+
+    <!-- Top Alert and Quick Contact Bar -->
+    <div class="bg-neutralDark text-gray-300 text-xs sm:text-sm py-2 px-4 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <span class="inline-flex items-center gap-1.5 font-medium text-amber-400">
+                    <i class="fa-solid fa-certificate text-xs"></i> مرخصة برقم (8718)
+                </span>
+                <span class="hidden sm:inline text-gray-600">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-awn-primary"></i> غزة، فلسطين</span>
+                <span class="hidden sm:inline text-gray-600">|</span>
+                <a href="tel:+972598950552" class="flex items-center gap-1.5 hover:text-white transition-colors" dir="ltr">
+                    <i class="fa-solid fa-phone text-awn-primary"></i> +972 59-895-0552
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/972598950552" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-base"></i> المساعدة المباشرة
+                </a>
+                <div class="flex items-center gap-3 text-gray-400">
+                    <a href="#" class="hover:text-awn-primary transition-colors" title="فيسبوك"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-awn-primary transition-colors" title="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:Info@awn.ps" class="hover:text-awn-primary transition-colors" title="البريد الإلكتروني"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo & Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-awn-dark to-awn-primary flex items-center justify-center text-white shadow-lg shadow-awn-primary/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-hand-holding-hand text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-extrabold text-neutralDark leading-none">الجمعية الفلسطينية عون</span>
+                        <span class="block text-xs font-bold text-awn-dark mt-1 tracking-wide">Awn Palestinian Association</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu Links -->
+                <nav class="hidden lg:flex items-center space-x-1 space-x-reverse font-bold text-gray-700 text-sm">
+                    <a href="#home" class="px-3.5 py-2 rounded-lg text-awn-dark bg-awn-light">الرئيسية</a>
+                    <a href="#about" class="px-3.5 py-2 rounded-lg hover:text-awn-dark hover:bg-gray-50 transition-colors">عن الجمعية</a>
+                    <a href="#sectors" class="px-3.5 py-2 rounded-lg hover:text-awn-dark hover:bg-gray-50 transition-colors">قطاعات العمل</a>
+                    <a href="#projects" class="px-3.5 py-2 rounded-lg hover:text-awn-dark hover:bg-gray-50 transition-colors">المشاريع</a>
+                    <a href="#transparency" class="px-3.5 py-2 rounded-lg hover:text-awn-dark hover:bg-gray-50 transition-colors">الشفافية والحوكمة</a>
+                    <a href="#contact" class="px-3.5 py-2 rounded-lg hover:text-awn-dark hover:bg-gray-50 transition-colors">تواصل معنا</a>
+                </nav>
+
+                <!-- Action CTA Buttons -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openHelpModal()" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 border-awn-dark text-awn-dark font-bold hover:bg-awn-light transition-all text-sm">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span>طلب مساعدة</span>
+                    </button>
+                    <button onclick="openDonateModal('مشروع عام')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-awn-dark to-awn-primary text-white font-bold shadow-md shadow-awn-primary/20 hover:shadow-lg hover:shadow-awn-primary/40 transition-all text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>تبرع الآن</span>
+                    </button>
+                    
+                    <!-- Mobile Hamburger Toggle -->
+                    <button id="mobile-toggle-btn" onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon-symbol"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu-dropdown" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-bold text-awn-dark bg-awn-light">الرئيسية</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-semibold text-gray-700 hover:bg-gray-50">عن الجمعية</a>
+            <a href="#sectors" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-semibold text-gray-700 hover:bg-gray-50">قطاعات العمل</a>
+            <a href="#projects" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-semibold text-gray-700 hover:bg-gray-50">المشاريع</a>
+            <a href="#transparency" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-semibold text-gray-700 hover:bg-gray-50">الشفافية والحوكمة</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block px-4 py-2.5 rounded-lg font-semibold text-gray-700 hover:bg-gray-50">تواصل معنا</a>
+            <button onclick="toggleMobileNav(); openHelpModal();" class="w-full text-right px-4 py-2.5 rounded-lg font-bold text-awn-dark bg-awn-light flex items-center justify-between">
+                <span>تقديم طلب مساعدة</span>
+                <i class="fa-solid fa-file-signature"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-hero-pattern relative text-white py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-8">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
+                        <span class="w-2.5 h-2.5 rounded-full bg-awn-primary animate-ping"></span>
+                        ترخيص رقم (8718) - مسجلة لدى وزارة الداخلية
+                    </span>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                        عون للإنسان.. <br>
+                        <span class="text-emerald-400">إغاثة طارئة</span> وتنمية مجتمعية مستدامة
+                    </h1>
+                    
+                    <p class="text-gray-200 text-base sm:text-lg lg:text-xl font-normal leading-relaxed mb-8 max-w-2xl text-justify">
+                        نعمل في الجمعية الفلسطينية عون من قلب قطاع غزة للوقوف بجانب الأسر المتعففة والمُتضررة، وتقديم العون الإغاثي والطبي والتنموي وصيانة شريان الحياة في كافة المناطق ولا سيما غزة وشمالها.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button onclick="openDonateModal('دعم عام ومباشر')" class="px-8 py-4 rounded-xl bg-awn-primary hover:bg-red-700 text-white font-extrabold text-base sm:text-lg shadow-xl shadow-awn-primary/40 transition-all transform hover:-translate-y-0.5 flex items-center gap-3">
+                            <i class="fa-solid fa-heart-circle-check text-xl"></i>
+                            <span>دعّم مشاريعنا الإغاثية</span>
+                        </button>
+                        
+                        <button onclick="openHelpModal()" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-base sm:text-lg backdrop-blur-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-pen"></i>
+                            <span>تقديم طلب مساعدة</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fast Fact Card -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl text-right">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-awn-primary flex items-center justify-center text-white">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white">الاستجابة الطارئة الحالية</h3>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            تُركز فرقنا الميدانية حالياً على توزيع المياه الصالحة للشرب، والطرود الغذائية، وإسناد ذوي الإعاقة والجرحى في شمال غزة ومناطق النزوح.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between py-1 border-b border-white/10">
+                                <span>شريان الحياة (المياه):</span>
+                                <span class="text-emerald-400 font-bold">نشط يومياً</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-white/10">
+                                <span>مشروع إسناد (الأجهزة):</span>
+                                <span class="text-emerald-400 font-bold">مستمر</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Animated Quick Statistics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 pt-10 border-t border-white/15">
+                <div class="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/10 text-center">
+                    <div class="text-2xl sm:text-4xl font-black text-amber-400 mb-1">2012</div>
+                    <div class="text-xs sm:text-sm text-gray-300 font-bold">سنة التأسيس والخبرة</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/10 text-center">
+                    <div class="text-2xl sm:text-4xl font-black text-emerald-400 mb-1">8718</div>
+                    <div class="text-xs sm:text-sm text-gray-300 font-bold">رقم الترخيص الرسمي</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/10 text-center">
+                    <div class="text-2xl sm:text-4xl font-black text-amber-400 mb-1">+150,000</div>
+                    <div class="text-xs sm:text-sm text-gray-300 font-bold">مستفيد إغاثي ومجتمعي</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/10 text-center">
+                    <div class="text-2xl sm:text-4xl font-black text-emerald-400 mb-1">8 قطاعات</div>
+                    <div class="text-xs sm:text-sm text-gray-300 font-bold">عمل إنساني شامل</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-7">
+                    <span class="text-awn-primary font-extrabold text-sm tracking-wider uppercase bg-awn-light px-3.5 py-1.5 rounded-full border border-awn-primary/20">من نحن</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-neutralDark mt-4 mb-6 leading-snug">
+                        الجمعية الفلسطينية عون.. مسيرة عطاء مستمرة منذ عام 2012
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-base mb-6 text-justify">
+                        تأسست **الجمعية الفلسطينية عون (Awn Palestinian Association)** كجمعية أهلية فلسطينية غير ربحية ومسجلة رسمياً لدى وزارة الداخلية تحت رقم الترخيص **8718** بموجب قانون الجمعيات الخيرية والهيئات الأهلية رقم 1 لسنة 2000.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-base mb-8 text-justify">
+                        منذ انطلاقتها في قطاع غزة، تكرس الجمعية جهودها الميدانية لتخفيف المعاناة عن كاهل الأسر المتعففة، ورعاية الجرحى وذوي الإعاقة، وإعادة تشغيل المرافق الحيوية كشبكات ومضخات المياه للتغلب على التحديات القاسية.
+                    </p>
+
+                    <!-- Vision, Mission & Values Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-neutralGray border border-gray-200">
+                            <div class="w-10 h-10 rounded-lg bg-awn-dark text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-eye text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-neutralDark text-base mb-1">الرؤية</h4>
+                            <p class="text-xs text-gray-500 leading-normal">ريادة إنسانية وتنموية تضمن العيش بكرامة واستدامة للمجتمع الفلسطيني.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-neutralGray border border-gray-200">
+                            <div class="w-10 h-10 rounded-lg bg-awn-primary text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-neutralDark text-base mb-1">الرسالة</h4>
+                            <p class="text-xs text-gray-500 leading-normal">تقديم الخدمات الإغاثية والتنموية بروح التكافل وفق أعلى معايير الجودة والحياد.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-neutralGray border border-gray-200">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-neutralDark text-base mb-1">القيم</h4>
+                            <p class="text-xs text-gray-500 leading-normal">الشفافية، المساءلة، الكرامة الإنسانية، والسرعة في الاستجابة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Card / Board Speech -->
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-b from-neutralGray to-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-awn-primary/10 rounded-full blur-3xl"></div>
+                        
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-awn-dark text-white flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-extrabold text-neutralDark">م. عبد الله خليل الحجار</h3>
+                                <p class="text-xs font-bold text-awn-primary">رئيس مجلس الإدارة</p>
+                            </div>
+                        </div>
+
+                        <blockquote class="text-gray-700 text-sm leading-relaxed italic border-r-4 border-awn-primary pr-4 my-4">
+                            "إن أملنا ورسالتنا في جمعية عون تكمن في صمودنا إلى جانب أهلنا في قطاع غزة. نعمل على مدار الساعة لتلبية الاحتياجات الإغاثية الطارئة، وإيصال الأمانة من أهل الخير إلى مستحقيها بأقصى قدر من الشفافية والمسؤولية."
+                        </blockquote>
+
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+                            <span>مجلس إدارة الجمعية الفلسطينية عون</span>
+                            <span class="font-bold text-neutralDark"><i class="fa-solid fa-check-double text-emerald-600 me-1"></i> معتمد ومسجل</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section id="sectors" class="py-20 bg-neutralGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-awn-primary font-extrabold text-sm tracking-wider uppercase bg-white px-3.5 py-1.5 rounded-full shadow-sm">مجالات التدخل</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-neutralDark mt-3 mb-4">قطاعات العمل الإنساني والتنموي (8 قطاعات)</h2>
+                <p class="text-gray-600 text-sm sm:text-base">نغطي كافة جوانب الحياة الأساسية والإغاثية لضمان الاستجابة الشاملة لأزمات واحتياجات مجتمعنا.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Sector 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-red-100 text-awn-primary flex items-center justify-center text-2xl mb-4 group-hover:bg-awn-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">الأمن الغذائي</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">توفير السلات الغذائية الطارئة، وجبات الطعام المطهوة، وتكيات الطعام الدورية للأسر النازحة والمنكوبة.</p>
+                </div>
+
+                <!-- Sector 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">المياه والصرف الصحي</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">مشروع (شريان الحياة) لصيانة الآبار ومضخات المياه وتوزيع المياه الصالحة للشرب صالحة للاستخدام.</p>
+                </div>
+
+                <!-- Sector 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">الصحة والرعاية الطبية</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">دعم المراكز الصحية، توفير المستلزمات والأدوية الطارئة، وإقامة الأيام الطبية المجانية.</p>
+                </div>
+
+                <!-- Sector 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">الدعم النفسي والاجتماعي</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">برامج تفريغ نفسي للأطفال والأمهات للتخفيف من آثار الصدمات والأزمات بأساليب تفاعلية.</p>
+                </div>
+
+                <!-- Sector 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wheelchair"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">الأجهزة المساندة (إسناد)</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">توفير الكراسي المتحركة، العكازات، وسماعات الأذن للجرحى وذوي الاحتياجات الخاصة.</p>
+                </div>
+
+                <!-- Sector 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">المأوى والإيواء الطارئ</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">توزيع الخيام، الأغطية، والشوادر البلاستيكية والخيام المؤقتة لحماية العائلات النازحة.</p>
+                </div>
+
+                <!-- Sector 7 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">التمكين الاقتصادي</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">تمويل المشاريع الصغرى المدرة للدخل للأسر المتعففة لتمكينها من تحلي الاعتماد على الذات.</p>
+                </div>
+
+                <!-- Sector 8 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-neutralDark mb-2">التعليم والطفولة</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">كفالة الطلاب، توفير الحقائب المدرسية والمستلزمات، ورعاية الأنشطة التعليمية البديلة.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-awn-primary font-extrabold text-sm tracking-wider uppercase bg-awn-light px-3.5 py-1.5 rounded-full border border-awn-primary/20">مشاريعنا الحالية</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-neutralDark mt-3">مشاريع الإغاثة والتنمية التنموية</h2>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterProjects('all')" class="project-tab-btn active font-bold px-4 py-2 rounded-xl text-xs sm:text-sm bg-awn-dark text-white shadow-sm transition-all">الكل</button>
+                    <button onclick="filterProjects('water')" class="project-tab-btn font-bold px-4 py-2 rounded-xl text-xs sm:text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all">سقيا المياه</button>
+                    <button onclick="filterProjects('food')" class="project-tab-btn font-bold px-4 py-2 rounded-xl text-xs sm:text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all">الأغذية والتكيات</button>
+                    <button onclick="filterProjects('disability')" class="project-tab-btn font-bold px-4 py-2 rounded-xl text-xs sm:text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all">ذوو الإعاقة (إسناد)</button>
+                </div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1: Water -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="water">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800&auto=format&fit=crop" alt="مشروع شريان الحياة" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">مياه وصحة</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neutralDark mb-2">مشروع شريان الحياة (سقيا غزة)</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">صيانة وتوفير صهاريج المياه الصالحة للشرب يومياً في مناطق غزة وشمال غزة المخففة للنزوح.</p>
+                        
+                        <!-- Progress -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs font-bold text-gray-700 mb-1">
+                                <span>التمويل المنجز</span>
+                                <span class="text-awn-primary">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-awn-primary h-full rounded-full" style="width: 78%"></div>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-gray-400 mt-2">
+                                <span>المستهدف: 50,000 $</span>
+                                <span>تم جمع: 39,000 $</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openDonateModal('مشروع شريان الحياة - المياه')" class="w-full py-3 rounded-xl bg-awn-dark hover:bg-awn-primary text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span>ساهم في توفير المياه</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Disability / Esnad -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="disability">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop" alt="مشروع إسناد" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">مشروع إسناد</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neutralDark mb-2">مبادرة إسناد للأجهزة المساندة</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">توفير كراسي متحركة كهربائية وعادية وعكازات للجرحى والمصابين وذوي الاحتياجات الخاصة.</p>
+                        
+                        <!-- Progress -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs font-bold text-gray-700 mb-1">
+                                <span>التمويل المنجز</span>
+                                <span class="text-awn-primary">62%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-awn-primary h-full rounded-full" style="width: 62%"></div>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-gray-400 mt-2">
+                                <span>المستهدف: 30,000 $</span>
+                                <span>تم جمع: 18,600 $</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openDonateModal('مبادرة إسناد للأجهزة الطبية')" class="w-full py-3 rounded-xl bg-awn-dark hover:bg-awn-primary text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wheelchair"></i>
+                            <span>كفالة جهاز مساند</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Food -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="food">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" alt="مشروع الطرود الغذائية" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">أمن غذائي</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neutralDark mb-2">مشروع السلة الغذائية الطارئة</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">توزيع سلات غذائية متكاملة تكفي العائلات المنكوبة والنازحة لمدة شهر كامل.</p>
+                        
+                        <!-- Progress -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs font-bold text-gray-700 mb-1">
+                                <span>التمويل المنجز</span>
+                                <span class="text-awn-primary">89%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-awn-primary h-full rounded-full" style="width: 89%"></div>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-gray-400 mt-2">
+                                <span>المستهدف: 40,000 $</span>
+                                <span>تم جمع: 35,600 $</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openDonateModal('مشروع الطرود الغذائية')" class="w-full py-3 rounded-xl bg-awn-dark hover:bg-awn-primary text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-box-tissue"></i>
+                            <span>التبرع بسلة غذائية</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance & Transparency Section -->
+    <section id="transparency" class="py-20 bg-neutralDark text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6">
+                    <span class="inline-block text-emerald-400 font-extrabold text-xs tracking-wider uppercase bg-white/10 px-3.5 py-1.5 rounded-full mb-4">الحوكمة والنزاهة</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight">
+                        الالتزام التام بمعايير الشفافية والمساءلة الإنسانية
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 text-justify">
+                        تعتمد **الجمعية الفلسطينية عون** نظاماً مالياً وإدارياً صارماً يستند إلى أحكام القانون رقم 1 لسنة 2000 وتوجيهات الوزارات الاختصاصية. وتُخضع الجمعية كافة أعمالها لتدقيق مالي سنوي مستقل من قبل مكاتب تدقيق معتمدة.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">تقارير إدارية ومالية دورية</h4>
+                                <p class="text-xs text-gray-400">توثيق كافة المشاريع بالصور والفيديوهات والتقارير الميدانية الموثوقة.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">التدقيق المالي الخارجي المستقل</h4>
+                                <p class="text-xs text-gray-400">مراجعة الحسابات سنوياً وإصدار التقارير المالية المعتمدة رسمياً.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">احترام كرامة المستفيد</h4>
+                                <p class="text-xs text-gray-400">الالتزام التام بالمعايير الدولية لتقديم الإغاثة دون مساس بكرامة الأسر.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-file-invoice text-awn-primary"></i>
+                            <span>البيانات الرسمية والترخيص</span>
+                        </h3>
+
+                        <div class="space-y-4 text-xs text-gray-300">
+                            <div class="flex justify-between py-2 border-b border-white/10">
+                                <span class="text-gray-400">اسم المؤسسة:</span>
+                                <span class="font-bold text-white">الجمعية الفلسطينية عون</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/10">
+                                <span class="text-gray-400">رقم الترخيص الرسمي:</span>
+                                <span class="font-bold text-emerald-400">8718 (وزارة الداخلية)</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/10">
+                                <span class="text-gray-400">سنة التأسيس:</span>
+                                <span class="font-bold text-white">2012 م</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/10">
+                                <span class="text-gray-400">رئيس مجلس الإدارة:</span>
+                                <span class="font-bold text-white">م. عبد الله خليل الحجار</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/10">
+                                <span class="text-gray-400">منطقة العمل الرئيسية:</span>
+                                <span class="font-bold text-white">قطاع غزة، فلسطين</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 rounded-xl bg-awn-primary/20 border border-awn-primary/40 text-center">
+                            <p class="text-xs text-gray-200">لطلب نسخة من التقرير السنوي أو البيانات الرسمية يرجى التواصل مع قسم الشفافية عبر البريد الإلكتروني: <a href="mailto:Info@awn.ps" class="text-emerald-400 underline font-bold">Info@awn.ps</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5">
+                    <span class="text-awn-primary font-extrabold text-sm tracking-wider uppercase bg-awn-light px-3.5 py-1.5 rounded-full border border-awn-primary/20">تواصل معنا</span>
+                    <h2 class="text-3xl font-extrabold text-neutralDark mt-3 mb-6">يسعدنا تواصلكم وتقديم يد العون</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-8">سواء كنت متبرعاً، استفساراً، أو جهة شريكة، فريقنا في الجمعية الفلسطينية عون جاهز للرد والإجابة على كافة اتصالاتكم.</p>
+
+                    <div class="space-y-6 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-awn-light text-awn-dark flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-neutralDark">المقر الرئيسي</h4>
+                                <p class="text-gray-500 text-xs mt-1">قطاع غزة - فلسطين</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-neutralDark">الهاتف والواتساب المباشر</h4>
+                                <p class="text-gray-500 text-xs mt-1" dir="ltr">+972 59-895-0552</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-neutralDark">البريد الإلكتروني الرسمي</h4>
+                                <p class="text-gray-500 text-xs mt-1">Info@awn.ps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Direct Message Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-neutralGray p-8 rounded-3xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-neutralDark mb-6">إرسال رسالة مباشرة</h3>
+                        
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكامل *</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="أدخل اسمك الكريم">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">رقم الجوال / الواتساب *</label>
+                                    <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="059XXXXXXX">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">البريد الإلكتروني</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="example@domain.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">موضوع الرسالة *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="استفسار، شراكة، أخرى...">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">نص الرسالة *</label>
+                                <textarea rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="اكتب تفاصيل رسالتك هنا..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-awn-dark hover:bg-awn-primary text-white font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>إرسال الرسالة</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-neutralDark text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-awn-primary flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-hand-holding-hand"></i>
+                        </div>
+                        <div>
+                            <span class="block text-lg font-bold text-white">الجمعية الفلسطينية عون</span>
+                            <span class="block text-xs text-gray-400">Awn Palestinian Association</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-md mb-6">
+                        مؤسسة أهلية غير ربحية مسجلة لدى وزارة الداخلية تحت رقم 8718 وتخضع لقانون الجمعيات رقم 1 لسنة 2000. تهدف لتقديم الإغاثة الطارئة والخدمات المجتمعية والتنموية لأبناء الشعب الفلسطيني.
+                    </p>
+                    <div class="flex items-center gap-3 text-gray-300">
+                        <a href="https://wa.me/972598950552" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-pink-600 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:Info@awn.ps" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-awn-primary hover:text-white flex items-center justify-center transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fast Navigation -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-bold text-sm mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-awn-primary transition-colors">الرئيسية</a></li>
+                        <li><a href="#about" class="hover:text-awn-primary transition-colors">عن الجمعية وكلمة الإدارة</a></li>
+                        <li><a href="#sectors" class="hover:text-awn-primary transition-colors">قطاعات التدخل الـ8</a></li>
+                        <li><a href="#projects" class="hover:text-awn-primary transition-colors">المشاريع الحالية</a></li>
+                        <li><a href="#transparency" class="hover:text-awn-primary transition-colors">الحوكمة والشفافية المالية</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services & Help -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-white font-bold text-sm mb-4">خدمات المواطنين والمساعدة</h4>
+                    <p class="text-xs text-gray-400 mb-4">هل أنت عائلة متضررة أو بحاجة لمساعدة طارئة أو جهاز مساند؟ يمكنك تقديم طلبك رسمياً الميداني عبر النموذج المعتمد.</p>
+                    <button onclick="openHelpModal()" class="w-full py-2.5 rounded-xl bg-awn-primary hover:bg-red-700 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <span>تعبئة طلب مساعدة جديد</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>© 2026 الجمعية الفلسطينية عون (Awn Association). جميع الحقوق محفوظة.</p>
+                <p>مسجلة لدى وزارة الداخلية - فلسطين (ترخيص 8718)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1: Help Request Form Modal -->
+    <div id="helpModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <button onclick="closeHelpModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-awn-light text-awn-dark flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-neutralDark">نموذج تقديم طلب مساعدة</h3>
+                    <p class="text-xs text-gray-500">الجمعية الفلسطينية عون - قطاع غزة</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleHelpRequestSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">الاسم الرباعي *</label>
+                        <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="الاسم كما في الهوية">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">رقم الهوية *</label>
+                        <input type="text" required pattern="[0-9]{9}" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="أدخل 9 أرقام">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">رقم الجوال / الواتساب *</label>
+                        <input type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="059XXXXXXX">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">المحافظة / المنطقة *</label>
+                        <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm">
+                            <option value="">اختر المحافظة...</option>
+                            <option value="شمال غزة">شمال غزة</option>
+                            <option value="مدينة غزة">مدينة غزة</option>
+                            <option value="المحافظة الوسطى">المحافظة الوسطى</option>
+                            <option value="خانيونس">خانيونس</option>
+                            <option value="رفح">رفح</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">نوع المساعدة المطلوبة *</label>
+                    <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm">
+                        <option value="">اختر نوع الخدمة...</option>
+                        <option value="طرد غذائي / وجبات">طرد غذائي / وجبات طعام</option>
+                        <option value="مياه صالحة للشرب">توفير مياه صالحة للشرب</option>
+                        <option value="جهاز مساند (مشروع إسناد)">جهاز مساند / كرسي متحرك (مشروع إسناد)</option>
+                        <option value="مستلزمات إيواء / خيمة">مستلزمات إيواء / خيمة طارئة</option>
+                        <option value="رعاية طبية / علاج">رعاية طبية / علاج للجرحى</option>
+                        <option value="أخرى">أخرى (اذكرها بالأسفل)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">تفاصيل الوضع العائلي والملاحظات</label>
+                    <textarea rows="3" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-awn-primary focus:outline-none text-sm" placeholder="عدد أفراد الأسرة، وجود إصابات، أو تفاصيل المساعدة المطلوب..."></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-awn-dark hover:bg-awn-primary text-white font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>تقديم الطلب الميداني</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Donation Modal -->
+    <div id="donateModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeDonateModal()" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-awn-primary text-white flex items-center justify-center text-2xl mx-auto mb-3 shadow-lg shadow-awn-primary/30">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-neutralDark">التبرع والمساهمة</h3>
+                <p class="text-xs text-gray-500 mt-1" id="donateModalProjectName">مشروع دعم الإغاثة الشاملة</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-awn-light p-4 rounded-xl border border-awn-primary/20 text-center">
+                    <span class="block text-xs font-bold text-awn-dark mb-1">للتبرع المباشر أو التحويل البنكي والخدمات الإلكترونية</span>
+                    <p class="text-xs text-gray-600">يمكنكم التواصل المباشر مع المسؤول المالي المعتمد لتقديم الدعم أو طلب بيانات الحساب البنكي:</p>
+                </div>
+
+                <div class="space-y-2">
+                    <a href="https://wa.me/972598950552?text=السلام%20عليكم،%20أرغب%20في%20التبرع%20لصالح%20الجمعية%20الفلسطينية%20عون" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>التبرع السريع عبر الواتساب المباشر</span>
+                    </a>
+
+                    <a href="mailto:Info@awn.ps?subject=طلب%20تفاصيل%20التبرع" class="w-full py-3 rounded-xl bg-neutralDark hover:bg-gray-800 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>مراسلة الإدارة المالية (Info@awn.ps)</span>
+                    </a>
+                </div>
+
+                <div class="text-center pt-2">
+                    <p class="text-[11px] text-gray-400">جميع التبرعات تصدر بها إيصالات رسمية معتمدة من الجمعية الفلسطينية عون ترخيص 8718.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Logic & JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobile-menu-dropdown');
+            const icon = document.getElementById('menu-icon-symbol');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        }
+
+        // Project Filtering System
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.project-tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-awn-dark', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+
+            event.target.classList.remove('bg-gray-100', 'text-gray-700');
+            event.target.classList.add('bg-awn-dark', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Help Modal Controls
+        function openHelpModal() {
+            document.getElementById('helpModal').classList.remove('hidden');
+        }
+        function closeHelpModal() {
+            document.getElementById('helpModal').classList.add('hidden');
+        }
+
+        // Donation Modal Controls
+        function openDonateModal(projectName) {
+            document.getElementById('donateModalProjectName').textContent = projectName || 'مشروع عام';
+            document.getElementById('donateModal').classList.remove('hidden');
+        }
+        function closeDonateModal() {
+            document.getElementById('donateModal').classList.add('hidden');
+        }
+
+        // Form Handlers
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلك مع الجمعية الفلسطينية عون. تم استلام رسالتك وسيتم الرد عليك في أسرع وقت.');
+            e.target.reset();
+        }
+
+        function handleHelpRequestSubmit(e) {
+            e.preventDefault();
+            alert('تم تقديم طلب المساعدة بنجاح. سيتواصل معك قسم الخدمة الميدانية في جمعية عون للتحقق والمتابعة.');
+            closeHelpModal();
+            e.target.reset();
+        }
+
+        // Close Modals on outside click
+        window.onclick = function(e) {
+            const helpModal = document.getElementById('helpModal');
+            const donateModal = document.getElementById('donateModal');
+            if (e.target === helpModal) closeHelpModal();
+            if (e.target === donateModal) closeDonateModal();
+        }
+    </script>
+</body>
+</html>
